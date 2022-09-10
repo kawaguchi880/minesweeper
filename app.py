@@ -9,6 +9,10 @@ def index():
    return render_template('index.html')
 
 
+@app.route('/minesweeper_easy')
+def minesweeper_easy():
+   return render_template('minesweeper_easy.html')
+
 
 
 if __name__ == '__main__':
