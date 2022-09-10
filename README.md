@@ -24,28 +24,34 @@ cd myproject
 
 # git があるか確認
 git --version
-
-# git cloneを実行
+```
+### 2.git cloneを実行
+```
 git clone https://github.com/kawaguchi880/test_repo.git
 
 # vscodeで開く
 cd test_repo
 code .
+```
 
-# Flaskパッケージの取得
-# ※python 3.7.10を予めインストールしておく
-# vscodeのターミナル上 cmdではなく，powershellで実行！
+### 3.Flaskパッケージの取得
+ ※python 3.7.10を予めインストールしておく
+ vscodeのターミナル上 cmdではなく，powershellで実行！
+```
 py -m venv .venv
 .venv\Scripts\Activate.ps1
+```
 
-# requirements.txtから依存関係等をインストールする
+### 4.requirements.txtから依存関係等をインストールする
+```
 pip install -r requirements.txt
 
 # pip list でインストールされたものを確認できる
 # pip をバージョンをアップグレードしたいなら，，↓↓↓
 pip install --upgrade pip
-
-# 環境変数を設定し，アプリを実行
+```
+### 5.環境変数を設定し，アプリを実行
+```
 $env:FLASK_ENV="development"
 flask run
 ```
