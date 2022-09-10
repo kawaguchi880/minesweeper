@@ -2,9 +2,7 @@
 <html lang="ja">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
   <title>minesweeper</title>
 </head>
 
@@ -12,16 +10,21 @@
   <h1>minesweeper!!!</h1>
   <div>ホーム画面
   </div>
-  <form action="{{url_for('minesweeper_easy')}}">
+  <div>
+    <a href="{{url_for('minesweeper_easy')}}">難易度1</a>
+    <a href="{{url_for('minesweeper_nomal')}}">難易度2</a>
+    <a href="{{url_for('minesweeper_hard')}}">難易度3</a>
+  </div>
+  <!-- <form action="{{url_for('minesweeper_easy')}}">
     <button>難易度1</button>
-  </form>
-  <form action="minesweeper_nomal">
+  </form> -->
+  <!-- <form action="{{url_for('minesweeper_nomal')}}">
     <button>難易度2</button>
   </form>
-  <form action="minesweeper_hard">
+  <form action="{{url_for('minesweeper_hard')}}">
     <button>難易度3</button>
-  </form>
-  <form action="mypage">
+  </form> -->
+  <form action="{{url_for('mypage')}}">
     <button>mypage</button>
   </form>
 </body>

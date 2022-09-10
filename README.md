@@ -5,12 +5,12 @@
 
 ## 環境
 - python 3.7.10
-- Flask 1.1.4
+- Flask 2.0.2
 - 
 
 ## 環境内容
 - ローカル： http://127.0.0.1:5000/
-- デプロイ：
+- デプロイ： https://minesweeper.azurewebsites.net/
 
 ## 環境構築方法
 

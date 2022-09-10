@@ -13,6 +13,19 @@ def index():
 def minesweeper_easy():
    return render_template('minesweeper_easy.html')
 
+@app.route('/minesweeper_nomal')
+def minesweeper_nomal():
+   return render_template('minesweeper_nomal.html')
+
+@app.route('/minesweeper_hard')
+def minesweeper_hard():
+   return render_template('minesweeper_hard.html')
+
+@app.route('/mypage')
+def mypage():
+   return render_template('mypage.html')
+
+
 
 
 if __name__ == '__main__':
