@@ -11,7 +11,7 @@
 - ローカル： http://127.0.0.1:5000/
 - デプロイ： https://minesweeper.azurewebsites.net/
 
-## ローカル環境構築方法
+## ローカル環境構築方法(windows)
 
 ### 1.作業ディレクトリを作成
 
@@ -37,8 +37,10 @@ code .
 ### 3.Flaskパッケージの取得
  ※python 3.7.10を予めインストールしておく
  vscodeのターミナル上 cmdではなく，powershellで実行！
+ ポリシーの変更
 ```
-py -m venv .venv
+PowerShell Set-ExecutionPolicy RemoteSigned CurrentUser
+py -m venv venv
 .venv\Scripts\Activate.ps1
 ```
 
