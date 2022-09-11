@@ -41,7 +41,7 @@ code .
 ```
 PowerShell Set-ExecutionPolicy RemoteSigned CurrentUser
 py -m venv venv
-.venv\Scripts\Activate.ps1
+venv\Scripts\Activate.ps1
 ```
 
 ### 4.requirements.txtから依存関係等をインストールする
@@ -52,6 +52,7 @@ pip install -r requirements.txt
 # pip をバージョンをアップグレードしたいなら，，↓↓↓
 pip install --upgrade pip
 ```
+
 ### 5.環境変数を設定し，アプリを実行
 ```
 $env:FLASK_ENV="development"
