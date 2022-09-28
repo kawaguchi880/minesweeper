@@ -1,0 +1,83 @@
+<html class="h-100">
+
+<head>
+  <title>minesweeper</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/common.css')}}" />
+  <script src="{{url_for('static',filename='js/common.js')}}"></script>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/mypage.css')}}" />
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+
+<body class="h-100">
+  <header class="w-100 d-flex justify-content-between align-items-center bg-light px-3">
+    <!— ヘッダーの内容 -->
+      <h1 class="mx-2 fs-4 text-primary fw-bold"><b>minesweeper!</b></h1>
+      <ul class="navbar-nav d-flex flex-row">
+        <li class="nav-item mx-3 text-muted active"><a href="{{url_for('mypage')}}"
+            class="nav-link text-secondary">mypage</a></li>
+      </ul>
+  </header>
+  <div class="d-flex flex-row w-100" style="height: calc(100% - 50px)">
+    <!— サイドメニュー -->
+      <nav class="bg-dark">
+        <ul class="nav flex-column m-0 p-3">
+          <li class="nav-item mb-2"><a href="/" class="nav-link">minesweeper</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link">数独パズル</a></li>
+        </ul>
+      </nav>
+      <!— メインコンテンツ -->
+        <main class="w-100 bg-light">
+          <!— タイトルバー -->
+            <div class="border shadow-sm d-flex flex-row align-items-center bg-light">
+              <div class="navbar-brand toggle-menu">
+                <button class="btn btn-light btn-sm" id="toggle"><i class="fas fa-bars fa-lg"></i></button>
+              </div>
+              <div class="fs-4 fw-bold">mypage</div>
+            </div>
+            <!— コンテンツ -->
+              <div class="container-fluid pt-3 px-5">
+                <div class="row">
+                  <div class="col-6"><b>名前</b></div>
+                  <div class="col-6"><b>アイコン</b></div>
+                </div>
+                <div class="row">
+                  <div class="col-6"><input type="text" name="name"></div>
+                  <div class="col-6">
+                    <select id="selectPhoto" name="アイコン">
+                      <option value="photo01" selected="selected">ニンジャ</option>
+                      <option value="photo02">女性</option>
+                      <option value="photo03">少年</option>
+                      <option value="photo04">海賊</option>
+                    </select>
+
+                    <ul>
+                      <li class="icon" id="photo01">
+                        <img src="{{ url_for('static',filename='images/ninnja.png')}}" alt="ニンジャ">
+                        <p>黒マスク</p>
+                      </li>
+                      <li class="icon" id="photo02">
+                        <img src="{{ url_for('static',filename='images/woman.png')}}" alt="女性">
+                        <p>キャリアウーマンっぽいひと</p>
+                      </li>
+                      <li class="icon" id="photo03">
+                        <img src="{{ url_for('static',filename='images/boy.png')}}" alt="少年">
+                        <p>少年A(雪国ver)....かわいい</p>
+                      </li>
+                      <li class="icon" id="photo04">
+                        <img src="{{ url_for('static',filename='images/kaizoku.png')}}" alt="海賊">
+                        <p>ダサい服のプリント全部これｗｗ</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="row pt-3">
+                  <div class="col-12 text-right"><input class="btn btn-danger" type="submit" value="登録"></div>
+                </div>
+        </main>
+  </div>
+  <script src="{{url_for('static',filename='js/mypage.js')}}"></script>
+</body>
+
+</html>

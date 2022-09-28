@@ -55,7 +55,7 @@ pip install --upgrade pip
 
 ### 5.環境変数を設定し，アプリを実行
 ```
-$env:FLASK_ENV="development"
+FLASK_ENV="development"
 flask run
 ```
 

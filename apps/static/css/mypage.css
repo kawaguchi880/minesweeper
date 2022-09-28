@@ -1,0 +1,29 @@
+.icon:nth-of-type(n+2){ display: none; }
+
+.icon {
+  display: block;
+  list-style: none;
+  list-style-position: initial;
+  list-style-image: initial;
+  list-style-type: none;
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin-top: 30px;
+}
+
+select {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 8px;
+  display: block;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+} */
+
+
