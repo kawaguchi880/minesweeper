@@ -38,43 +38,52 @@
             </div>
             <!— コンテンツ -->
               <div class="container-fluid pt-3 px-5">
-                <div class="row">
-                  <div class="col-6"><b>名前</b></div>
-                  <div class="col-6"><b>アイコン</b></div>
-                </div>
-                <div class="row">
-                  <div class="col-6"><input type="text" name="name"></div>
-                  <div class="col-6">
-                    <select id="selectPhoto" name="アイコン">
-                      <option value="photo01" selected="selected">ニンジャ</option>
-                      <option value="photo02">女性</option>
-                      <option value="photo03">少年</option>
-                      <option value="photo04">海賊</option>
-                    </select>
-
-                    <ul>
-                      <li class="icon" id="photo01">
-                        <img src="{{ url_for('static',filename='images/ninnja.png')}}" alt="ニンジャ">
-                        <p>黒マスク</p>
-                      </li>
-                      <li class="icon" id="photo02">
-                        <img src="{{ url_for('static',filename='images/woman.png')}}" alt="女性">
-                        <p>キャリアウーマンっぽいひと</p>
-                      </li>
-                      <li class="icon" id="photo03">
-                        <img src="{{ url_for('static',filename='images/boy.png')}}" alt="少年">
-                        <p>少年A(雪国ver)....かわいい</p>
-                      </li>
-                      <li class="icon" id="photo04">
-                        <img src="{{ url_for('static',filename='images/kaizoku.png')}}" alt="海賊">
-                        <p>ダサい服のプリント全部これｗｗ</p>
-                      </li>
-                    </ul>
+                <form action="/setcookie" method="POST">
+                  <div class="row">
+                    <div class="col-6"><b>名前</b></div>
+                    <div class="col-6"><b>アイコン</b></div>
                   </div>
+                  <div class="row">
+                    <div class="col-6"><input type="text" name="nm" maxlength="10" minlength="1" required>
+                      <p style="color:darkgray">※名前は1文字以上10文字以内で登録してください</p>
+                    </div>
+                    <div class="col-6">
+                      <select id="selectPhoto" name="icon">
+                        <option name="icon" value="images/ninnja.png" selected="selected">ニンジャ</option>
+                        <option name="icon" value="images/woman.png">女性</option>
+                        <option name="icon" value="images/boy.png">少年</option>
+                        <option name="icon" value="images/kaizoku.png">海賊</option>
+                      </select>
+
+                      <ul>
+                        <li class="icon" id="images/ninnja.png">
+                          <img src="{{ url_for('static',filename='images/ninnja.png')}}" alt="ニンジャ">
+                          <p class="icon_text">黒マスク</p>
+                        </li>
+                        <li class="icon" id="images/woman.png">
+                          <img src="{{ url_for('static',filename='images/woman.png')}}" alt="女性">
+                          <p class="icon_text">キャリアウーマンっぽいひと</p>
+                        </li>
+                        <li class="icon" id="images/boy.png">
+                          <img src="{{ url_for('static',filename='images/boy.png')}}" alt="少年">
+                          <p class="icon_text">少年A(雪国ver)....かわいい</p>
+                        </li>
+                        <li class="icon" id="images/kaizoku.png">
+                          <img src="{{ url_for('static',filename='images/kaizoku.png')}}" alt="海賊">
+                          <p class="icon_text">ダサい服のプリント全部これｗｗ</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="row col-6">
+                    <input class="btn btn-danger" type="submit" value="登録・更新">
+                  </div>
+                </form>
+                <div class="row col-6">
+                  <a class="btn btn-danger" href="/delete_cookie">全て削除</a>
+                  <p style="color:rgb(152, 69, 69)">※戦績等も消えます</p>
                 </div>
-                <div class="row pt-3">
-                  <div class="col-12 text-right"><input class="btn btn-danger" type="submit" value="登録"></div>
-                </div>
+              </div>
         </main>
   </div>
   <script src="{{url_for('static',filename='js/mypage.js')}}"></script>

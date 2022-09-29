@@ -6,6 +6,7 @@
   list-style-position: initial;
   list-style-image: initial;
   list-style-type: none;
+  text-align: center;
 }
 
 img {
@@ -18,7 +19,7 @@ img {
 select {
   width: 100%;
   max-width: 500px;
-  margin: 0 auto;
+  margin: 0px;
   padding: 8px;
   display: block;
   border: 1px solid #ccc;
@@ -26,4 +27,14 @@ select {
   cursor: pointer;
 } */
 
+p{
+  text-align: center;
+}
 
+.icon_text {
+  color: rgb(82, 82, 82);
+}
+
+ul{
+  padding: 0%;
+}
