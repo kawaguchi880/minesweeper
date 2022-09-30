@@ -1,9 +1,11 @@
 from datetime import datetime
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory,make_response,flash
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory,make_response,flash,session
 import json
+from datetime import timedelta
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "jabf6OsdgoIaoiwfh"
+app.permanent_session_lifetime = timedelta(minutes=5)
 
 @app.route('/')
 def index():
@@ -32,7 +34,9 @@ def mypage():
 
 @app.route('/setcookie',methods = ['POST','GET'])
 def setcookie():
+   
    if request.method =='POST':
+      session.permanent = True
       user_name = request.form['nm']
       user_icon = "images/{}.png".format(request.form['icon'])
       user_info = {'user_name':user_name,'user_icon':user_icon}
