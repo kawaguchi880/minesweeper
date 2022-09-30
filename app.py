@@ -1,9 +1,9 @@
 from datetime import datetime
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory,make_response
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory,make_response,flash
 import json
 
 app = Flask(__name__)
-
+app.config["SECRET_KEY"] = "jabf6OsdgoIaoiwfh"
 
 @app.route('/')
 def index():
@@ -34,11 +34,13 @@ def mypage():
 def setcookie():
    if request.method =='POST':
       user_name = request.form['nm']
-      user_icon = request.form['icon']
+      user_icon = "images/{}.png".format(request.form['icon'])
       user_info = {'user_name':user_name,'user_icon':user_icon}
+      flash('登録しました。  ユーザー名：{}  アイコン：{}'.format(user_name,request.form['icon']), 'register')
 
    res = make_response(render_template('mypage.html'))
    res.set_cookie('user_info',value=json.dumps(user_info))
+   
    return res
 
 @app.route('/delete_cookie')

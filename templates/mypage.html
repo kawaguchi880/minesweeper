@@ -49,26 +49,26 @@
                     </div>
                     <div class="col-6">
                       <select id="selectPhoto" name="icon">
-                        <option name="icon" value="images/ninnja.png" selected="selected">ニンジャ</option>
-                        <option name="icon" value="images/woman.png">女性</option>
-                        <option name="icon" value="images/boy.png">少年</option>
-                        <option name="icon" value="images/kaizoku.png">海賊</option>
+                        <option name="icon" value="ninnja" selected="selected">ニンジャ</option>
+                        <option name="icon" value="woman">女性</option>
+                        <option name="icon" value="boy">少年</option>
+                        <option name="icon" value="kaizoku">海賊</option>
                       </select>
 
                       <ul>
-                        <li class="icon" id="images/ninnja.png">
+                        <li class="icon" id="ninnja">
                           <img src="{{ url_for('static',filename='images/ninnja.png')}}" alt="ニンジャ">
                           <p class="icon_text">黒マスク</p>
                         </li>
-                        <li class="icon" id="images/woman.png">
+                        <li class="icon" id="woman">
                           <img src="{{ url_for('static',filename='images/woman.png')}}" alt="女性">
                           <p class="icon_text">キャリアウーマンっぽいひと</p>
                         </li>
-                        <li class="icon" id="images/boy.png">
+                        <li class="icon" id="boy">
                           <img src="{{ url_for('static',filename='images/boy.png')}}" alt="少年">
                           <p class="icon_text">少年A(雪国ver)....かわいい</p>
                         </li>
-                        <li class="icon" id="images/kaizoku.png">
+                        <li class="icon" id="kaizoku">
                           <img src="{{ url_for('static',filename='images/kaizoku.png')}}" alt="海賊">
                           <p class="icon_text">ダサい服のプリント全部これｗｗ</p>
                         </li>
@@ -77,10 +77,19 @@
                   </div>
                   <div class="row col-6">
                     <input class="btn btn-danger" type="submit" value="登録・更新">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                    <div>
+                      {% for category, message in messages %}
+                      <b class="{{ category }}">{{ message }}</b>
+                      {% endfor %}
+                    </div>
+                    {% endif %}
+                    {% endwith %}
                   </div>
                 </form>
                 <div class="row col-6">
-                  <a class="btn btn-danger" href="/delete_cookie">全て削除</a>
+                  <a class="btn btn-danger delete_user_info" href="/delete_cookie">全て削除</a>
                   <p style="color:rgb(152, 69, 69)">※戦績等も消えます</p>
                 </div>
               </div>
