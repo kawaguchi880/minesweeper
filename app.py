@@ -102,8 +102,16 @@ def buttle_rerult():
 @app.route('/statistics')
 def statistics():
    user_info = request.cookies.get('user_info')
-   if user_info is not None:
-        user_info = json.loads(user_info)
-   return render_template('statistics.html',user_info=user_info)
+   user_info = json.loads(user_info)
+   print(user_info)
+   buttle_count = int(user_info['buttle_count'])
+   print(user_info)
+   print(buttle_count)
+   if buttle_count == 0:
+      flash("戦績はまだありません!!",'errtext')
+      return  redirect('/')
+   else:
+      return render_template('statistics.html',user_info=user_info)
+   
 if __name__ == '__main__':
    app.run()

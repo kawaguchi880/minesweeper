@@ -66,7 +66,7 @@
                         </li>
                         <li class="icon" id="boy">
                           <img src="{{ url_for('static',filename='images/boy.png')}}" alt="少年">
-                          <p class="icon_text">少年A(雪国ver)....かわいい</p>
+                          <p class="icon_text">少年(雪国ver)....かわいい</p>
                         </li>
                         <li class="icon" id="kaizoku">
                           <img src="{{ url_for('static',filename='images/kaizoku.png')}}" alt="海賊">
@@ -76,7 +76,7 @@
                     </div>
                   </div>
                   <div class="row col-6">
-                    <input class="btn btn-danger" type="submit" value="登録・更新">
+                    <input class="btn btn-danger bottom-up" type="submit" value="登録・更新">
                     {% with messages = get_flashed_messages(with_categories=true) %}
                     {% if messages %}
                     <div>
@@ -89,7 +89,7 @@
                   </div>
                 </form>
                 <div class="row col-6">
-                  <a class="btn btn-danger delete_user_info" href="/delete_cookie">全て削除</a>
+                  <a class="btn btn-danger delete_user_info bottom-up" href="/delete_cookie">全て削除</a>
                   <p style="color:rgb(152, 69, 69)">※戦績等も消えます</p>
                 </div>
               </div>

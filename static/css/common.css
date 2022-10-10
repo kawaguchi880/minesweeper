@@ -27,3 +27,8 @@ body{
   border-left-style: solid ;
   border-left-color: #6495ED;
 }
+
+.bottom-up:hover {
+  box-shadow: 0 5px 10px black;
+  transform: translate(0, -5px);
+  }

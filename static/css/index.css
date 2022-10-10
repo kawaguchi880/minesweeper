@@ -1,1 +1,26 @@
 
+.headHover {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+.headHover::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #2196F3;
+  transition: all 0.3s ease 0s;
+}
+.headHover:hover {
+  cursor: pointer;
+}
+.headHover:hover::after {
+  width: 100%;
+}
+
+.errtext{
+  color: rgb(141, 29, 29);
+}
