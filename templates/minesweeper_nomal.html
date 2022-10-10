@@ -4,6 +4,7 @@
   <title>minesweeper</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css')}}" />
   <link rel="stylesheet" href="{{ url_for('static',filename='css/common.css')}}" />
   <script src="{{url_for('static',filename='js/common.js')}}"></script>
 </head>
@@ -15,6 +16,15 @@
       <ul class="navbar-nav d-flex flex-row">
         <li class="nav-item mx-3 text-muted active"><a href="{{url_for('mypage')}}"
             class="nav-link text-secondary">mypage</a></li>
+        {% if user_info == None %}
+        {% else %}
+        <li class="nav-item mx-3 text-muted active">
+          <a href="{{url_for('statistics')}}" class="nav-link text-secondary">{{user_info.user_name}}さんの戦績</a>
+        </li>
+        <li class="nav-item mx-3 text-muted active">
+          <img src="{{url_for('static',filename=user_info.user_icon)}}" style="width:40px" alt="ユーザのアイコン">
+        </li>
+        {% endif %}
       </ul>
   </header>
   <div class="d-flex flex-row w-100" style="height: calc(100% - 50px)">
@@ -32,7 +42,8 @@
               <div class="navbar-brand toggle-menu">
                 <button class="btn btn-light btn-sm" id="toggle"><i class="fas fa-bars fa-lg"></i></button>
               </div>
-              <div class="fs-4 fw-bold">マインスイーパの部屋</div>
+              <div class="fs-4 fw-bold">マインスイーパ(nomal)
+              </div>
             </div>
             <!— コンテンツ -->
 

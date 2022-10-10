@@ -42,34 +42,40 @@
               <div class="navbar-brand toggle-menu">
                 <button class="btn btn-light btn-sm" id="toggle"><i class="fas fa-bars fa-lg"></i></button>
               </div>
-              <div class="fs-4 fw-bold">マインスイーパの部屋</div>
+              <div class="fs-4 fw-bold">{{user_info.user_name}}さんの戦績</div>
             </div>
             <!— コンテンツ -->
-              <div class="p-3">
-                <div class="d-flex flex-row">
-                  <div class="card mx-1" style="max-width: 20rem;">
-                    <img src="https://minesweeper.online/img/homepage/beginner.png" alt="img" class="card-img-top">
-                    <div class="card-body " style="text-align: center;">
-                      <h4 class="card-title">難易度1</h4>
-                      <p class="card-text">easyモードです</p>
-                      <a href="{{url_for('minesweeper_easy')}}" class="btn btn-outline-primary stretched-link ">遊ぶ</a>
-                    </div>
+              <h1 class="col-12 align-items-center bg-light center-block"><u>総合</u></h1>
+              <div class="d-flex flex-row">
+                <div class="card mx-1" style="max-width: 20rem;">
+                  <div class="card-body " style="text-align: center;">
+                    <h4 class="card-title">総試合数</h4>
+                    <h3 class="card-text">{{user_info.buttle_count}}回
+                    </h3>
                   </div>
-                  <div class="card mx-1" style="max-width: 20rem;">
-                    <img src="https://minesweeper.online/img/homepage/intermediate.png" alt="img" class="card-img-top">
-                    <div class="card-body " style="text-align: center;">
-                      <h4 class="card-title">難易度2</h4>
-                      <p class="card-text">nomalモードです</p>
-                      <a href="{{url_for('minesweeper_nomal')}}" class="btn btn-outline-primary stretched-link ">遊ぶ</a>
-                    </div>
+                </div>
+                <div class="card mx-1" style="max-width: 20rem;">
+                  <div class="card-body " style="text-align: center;">
+                    <h4 class="card-title">総勝利回数</h4>
+                    <h3 class="card-text">{{user_info.win_count}}回
+                    </h3>
                   </div>
-                  <div class="card mx-1" style="max-width: 20rem;">
-                    <img src="https://minesweeper.online/img/homepage/expert.png" alt="img" class="card-img-top">
-                    <div class="card-body " style="text-align: center;">
-                      <h4 class="card-title">難易度3</h4>
-                      <p class="card-text">hardモードです</p>
-                      <a href="{{url_for('minesweeper_hard')}}" class="btn btn-outline-primary stretched-link ">遊ぶ</a>
-                    </div>
+                </div>
+                <div class="card mx-1" style="max-width: 20rem;">
+                  <div class="card-body " style="text-align: center;">
+                    <h4 class="card-title">勝率</h4>
+                    <h3 class="card-text">{{user_info.win_count*100//user_info.buttle_count}}%
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <h1 class="col-12 align-items-center bg-light"><u>minesweeperの試合数</u></h1>
+              <div class="d-flex flex-row">
+                <div class="card mx-1" style="max-width: 20rem;">
+                  <div class="card-body " style="text-align: center;">
+                    <h4 class="card-title">難易度hard</h4>
+                    <h3 class="card-text">{{user_info.mine_hard_count}}回
+                    </h3>
                   </div>
                 </div>
               </div>
