@@ -45,33 +45,47 @@
               <div class="fs-4 fw-bold">{{user_info.user_name}}さんの戦績</div>
             </div>
             <!— コンテンツ -->
-              <h1 class="col-12 align-items-center bg-light center-block"><u>総合</u></h1>
+              <h2 class="col-12 align-items-center center-block leftcolor-blue"><u>総合</u></h2>
               <div class="d-flex flex-row">
-                <div class="card mx-1" style="max-width: 20rem;">
+                <div class="card mx-1 bg-danger bg-gradient text-white bg-opacity-70 " style="width: 20rem;">
                   <div class="card-body " style="text-align: center;">
                     <h4 class="card-title">総試合数</h4>
                     <h3 class="card-text">{{user_info.buttle_count}}回
                     </h3>
                   </div>
                 </div>
-                <div class="card mx-1" style="max-width: 20rem;">
+                <div class="card mx-1 bg-success bg-gradient text-white bg-opacity-70" style="width: 20rem;">
                   <div class="card-body " style="text-align: center;">
                     <h4 class="card-title">総勝利回数</h4>
                     <h3 class="card-text">{{user_info.win_count}}回
                     </h3>
                   </div>
                 </div>
-                <div class="card mx-1" style="max-width: 20rem;">
+                <div class="card mx-1 bg-secondary bg-info text-white bg-opacity-70" style="width: 20rem;">
                   <div class="card-body " style="text-align: center;">
-                    <h4 class="card-title">勝率</h4>
+                    <h4 class="card-title ">勝率</h4>
                     <h3 class="card-text">{{user_info.win_count*100//user_info.buttle_count}}%
                     </h3>
                   </div>
                 </div>
               </div>
-              <h1 class="col-12 align-items-center bg-light"><u>minesweeperの試合数</u></h1>
+              <h2 class="col-12 align-items-center bg-light leftcolor-blue"><u>minesweeperの試合数</u></h2>
               <div class="d-flex flex-row">
-                <div class="card mx-1" style="max-width: 20rem;">
+                <div class="card mx-1 bg-secondary bg-gradient text-white bg-opacity-70" style="width: 20rem;">
+                  <div class="card-body " style="text-align: center;">
+                    <h4 class="card-title">難易度easy</h4>
+                    <h3 class="card-text">{{user_info.mine_hard_count}}回
+                    </h3>
+                  </div>
+                </div>
+                <div class="card mx-1 bg-primary bg-gradient text-white bg-opacity-70" style="width: 20rem;">
+                  <div class="card-body " style="text-align: center;">
+                    <h4 class="card-title">難易度nomal</h4>
+                    <h3 class="card-text">{{user_info.mine_hard_count}}回
+                    </h3>
+                  </div>
+                </div>
+                <div class="card mx-1 bg-warning bg-gradient text-white bg-opacity-70" style="width: 20rem;">
                   <div class="card-body " style="text-align: center;">
                     <h4 class="card-title">難易度hard</h4>
                     <h3 class="card-text">{{user_info.mine_hard_count}}回
@@ -79,6 +93,7 @@
                   </div>
                 </div>
               </div>
+              <p>※難易度nomalと難易度easyのcount処理は未実装</p>
         </main>
   </div>
 </body>

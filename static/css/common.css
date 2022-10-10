@@ -16,3 +16,14 @@ nav {
 main {
   transition: 0.3s all ease;
 }
+
+body{
+  font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+}
+
+.leftcolor-blue{
+  padding-left: 10px ;
+  border-left-width: 5px ;
+  border-left-style: solid ;
+  border-left-color: #6495ED;
+}
