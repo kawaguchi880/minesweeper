@@ -14,14 +14,14 @@
     <!— ヘッダーの内容 -->
       <h1 class="mx-2 fs-4 text-primary fw-bold"><b>minesweeper!</b></h1>
       <ul class="navbar-nav d-flex flex-row">
-        <li class="nav-item mx-3 text-muted active"><a href="{{url_for('mypage')}}"
-            class="nav-link text-secondary">mypage</a></li>
+        <li class="nav-item mx-3 text-muted active headHover"><a href="{{url_for('mypage')}}"
+            class="nav-link text-dark">mypage</a></li>
         {% if user_info == None %}
         {% else %}
-        <li class="nav-item mx-3 text-muted active">
-          <a href="{{url_for('statistics')}}" class="nav-link text-secondary">{{user_info.user_name}}さんの戦績</a>
+        <li class="nav-item mx-3 text-muted active headHover">
+          <a href="{{url_for('statistics')}}" class="nav-link text-dark">{{user_info.user_name}}さんの戦績</a>
         </li>
-        <li class="nav-item mx-3 text-muted active">
+        <li class="nav-item mx-3 text-muted active ">
           <img src="{{url_for('static',filename=user_info.user_icon)}}" style="width:40px" alt="ユーザのアイコン">
         </li>
         {% endif %}
