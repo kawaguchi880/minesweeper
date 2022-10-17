@@ -9,7 +9,7 @@
 - ブラウザ Google Chrome
 ## 環境内容
 - ローカル： http://127.0.0.1:5000/
-- デプロイ： https://minesweeper.azurewebsites.net/
+- デプロイ： https://minesweeper.azurewebsites.net
 
 ## ローカル環境構築方法(windows)
 
