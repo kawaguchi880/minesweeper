@@ -80,8 +80,9 @@ def delete_cookie():
 @app.route('/game_result',methods = ['POST','GET'])
 def buttle_rerult():
    user_info = request.cookies.get('user_info')
+   print(user_info)
    if  user_info is None:
-      return render_template('index.html')
+      return render_template('index.html',user_info = user_info)
    elif request.method =='POST':
       user_info = json.loads(user_info)
       result = request.form['game_result']
