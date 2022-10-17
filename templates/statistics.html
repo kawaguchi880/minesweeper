@@ -32,7 +32,7 @@
       <nav class="bg-dark">
         <ul class="nav flex-column m-0 p-3">
           <li class="nav-item mb-2"><a href="/" class="nav-link bottom-up">minesweeper</a></li>
-          <li class="nav-item mb-2 bottom-up"><a href="#" class="nav-link">数独パズル</a></li>
+          <li class="nav-item mb-2 bottom-up"><a href="/sudoku" class="nav-link">数独パズル</a></li>
         </ul>
       </nav>
       <!— メインコンテンツ -->
@@ -75,14 +75,14 @@
                   style="width: 20rem;">
                   <div class="card-body " style="text-align: center;">
                     <h4 class="card-title">難易度easy</h4>
-                    <h3 class="card-text">{{user_info.mine_hard_count}}回
+                    <h3 class="card-text">{{user_info.mine_easy_count}}回
                     </h3>
                   </div>
                 </div>
                 <div class="card mx-1 bg-primary bg-gradient text-white bg-opacity-70 bottom-up" style="width: 20rem;">
                   <div class="card-body " style="text-align: center;">
                     <h4 class="card-title">難易度nomal</h4>
-                    <h3 class="card-text">{{user_info.mine_hard_count}}回
+                    <h3 class="card-text">{{user_info.mine_nomal_count}}回
                     </h3>
                   </div>
                 </div>
@@ -94,7 +94,6 @@
                   </div>
                 </div>
               </div>
-              <p>※難易度nomalと難易度easyのcount処理は未実装</p>
         </main>
   </div>
 </body>

@@ -32,7 +32,7 @@
       <nav class="bg-dark">
         <ul class="nav flex-column m-0 p-3">
           <li class="nav-item mb-2"><a href="/" class="nav-link">minesweeper</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link">数独パズル</a></li>
+          <li class="nav-item mb-2"><a href="/sudoku" class="nav-link">数独パズル</a></li>
         </ul>
       </nav>
       <!— メインコンテンツ -->
@@ -46,7 +46,16 @@
               </div>
             </div>
             <!— コンテンツ -->
-
+              <div class="container-fluid pt-3 px-5">
+                <form action="/game_result" method="POST">
+                  <input type="hidden" value="nomal" name="game_level"></input>
+                  <button value="win" name="game_result">難易度nomalのwinボタン</button>
+                </form>
+                <form action="/game_result" method="POST">
+                  <input type="hidden" value="nomal" name="game_level"></input>
+                  <button value="lose" name="game_result">難易度nomalのloseボタン</button>
+                </form>
+              </div>
         </main>
   </div>
 </body>

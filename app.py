@@ -14,6 +14,12 @@ def index():
         user_info = json.loads(user_info)
    return render_template('index.html',user_info=user_info)
 
+@app.route('/sudoku')
+def sudoku():
+   user_info = request.cookies.get('user_info')
+   if user_info is not None:
+        user_info = json.loads(user_info)
+   return render_template('sudoku.html',user_info=user_info)
 
 
 @app.route('/minesweeper_easy')
@@ -50,10 +56,14 @@ def setcookie():
       user_name = request.form['nm']
       buttle_count = "0"
       win_count ="0"
+      mine_easy_count="0"
+      mine_nomal_count ="0"
       mine_hard_count="0"
+      mine_easy_win_count="0"
+      mine_nomal_win_count="0"
       mine_hard_win_count = "0"
       user_icon = "images/{}.png".format(request.form['icon'])
-      user_info = {'user_name':user_name,'user_icon':user_icon,'win_count':win_count,'buttle_count':buttle_count,'mine_hard_count':mine_hard_count,'mine_hard_win_count':mine_hard_win_count}
+      user_info = {'user_name':user_name,'user_icon':user_icon,'win_count':win_count,'buttle_count':buttle_count,'mine_hard_count':mine_hard_count,'mine_hard_win_count':mine_hard_win_count,'mine_nomal_count':mine_nomal_count,'mine_nomal_win_count':mine_nomal_win_count,'mine_easy_win_count':mine_easy_win_count,'mine_easy_count':mine_easy_count}
       flash('登録しました。  ユーザー名：{}  アイコン：{}'.format(user_name,request.form['icon']), 'register')
 
    res = make_response(render_template('mypage.html'))
@@ -86,6 +96,15 @@ def buttle_rerult():
          mine_hard_count = int(user_info['mine_hard_count'])
          mine_hard_count +=1
          user_info['mine_hard_count'] = mine_hard_count
+      if game_level == 'nomal':
+         mine_nomal_count = int(user_info['mine_nomal_count'])
+         mine_nomal_count +=1
+         user_info['mine_nomal_count'] = mine_nomal_count
+      if game_level == 'easy':
+         mine_easy_count = int(user_info['mine_easy_count'])
+         mine_easy_count +=1
+         user_info['mine_easy_count'] = mine_easy_count
+
       if result == 'win':
          win_count = int(user_info['win_count'])
          win_count +=1
@@ -94,6 +113,15 @@ def buttle_rerult():
             mine_hard_win_count = int(user_info['mine_hard_win_count'])
             mine_hard_win_count +=1
             user_info['mine_hard_win_count'] = mine_hard_win_count
+         if game_level == 'nomal':
+            mine_nomal_win_count = int(user_info['mine_nomal_win_count'])
+            mine_nomal_win_count +=1
+            user_info['mine_nomal_win_count'] = mine_nomal_win_count
+         if game_level == 'easy':
+            mine_easy_win_count = int(user_info['mine_easy_win_count'])
+            mine_easy_win_count +=1
+            user_info['mine_easy_win_count'] = mine_easy_win_count
+
    print(user_info)
    res = make_response(render_template('index.html',user_info=user_info))
    res.set_cookie('user_info',value=json.dumps(user_info))
