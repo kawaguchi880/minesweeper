@@ -4,7 +4,6 @@
   <title>minesweeper</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css')}}" />
   <link rel="stylesheet" href="{{ url_for('static',filename='css/common.css')}}" />
   <script src="{{url_for('static',filename='js/common.js')}}"></script>
 </head>
@@ -48,11 +47,11 @@
               <div class="container-fluid pt-3 px-5">
                 <form action="/game_result" method="POST">
                   <input type="hidden" value="hard" name="game_level"></input>
-                  <button value="win" name="game_result">難易度hardのwinボタン</button>
+                  <button value="win" name="game_result">難易度hardのwinボタン(dev用)</button>
                 </form>
                 <form action="/game_result" method="POST">
                   <input type="hidden" value="hard" name="game_level"></input>
-                  <button value="lose" name="game_result">難易度hardのloseボタン</button>
+                  <button value="lose" name="game_result">難易度hardのloseボタン(dev用)</button>
                 </form>
               </div>
         </main>
