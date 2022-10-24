@@ -1,0 +1,151 @@
+
+/* setting */
+#text {
+  width: 290px;
+  margin: 0 auto;
+  text-align: center;
+  border: solid 1px black;
+  border-radius: 5px;
+}
+#text h1 {
+  color: yellowgreen;
+  margin: 0;
+}
+#text h3 {
+  margin: 0;
+}
+#text p {
+  margin: 3px 0;
+}
+#setting2 {
+  display: flex;
+  width: 290px;
+  margin: 0 auto;
+}
+#btn {
+  width: 100%;
+  margin: 3px auto;
+  padding: 2px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  border: solid 1px black;
+  background: black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.timer::before {
+  line-height: 30px;
+  font-size: 24px;
+  font-family: "Material Icons Outlined";
+}
+
+/* game */
+#board {
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: rgb(20, 160, 211);
+}
+td {
+  border: solid 3px white;
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+.open {
+  background: #e6e6e6;
+  animation: fadein 0.7s;
+}
+.flag::before {
+  font-family: "Material Icons";
+  content: "\e153";
+  animation: fadein 0.3s;
+}
+.bomb {
+  background: red;
+  animation: fadein 1s infinite;
+}
+.bomb::before {
+  font-family: "Material Icons";
+  content: "\ea0b";
+}
+.clear {
+  background: pink;
+  animation: fadein 5s infinite;
+}
+.clear::before {
+  font-family: "Material Icons";
+  content: "\e545";
+}
+.bombCount::before {
+  font-size: 24px;
+  font-family: "Material Icons";
+  content: "\e153";
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+.modal-content {
+  background-color: #f4f4f4;
+  margin: 20% auto;
+  width: 50%;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+  animation-name: modalopen;
+  animation-duration: 1s;
+}
+
+@keyframes modalopen {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+.modal-header h3 {
+  text-align:center;
+}
+
+.modal-header {
+  background: rgb(173, 223, 230);
+  padding: 3px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modalClose {
+  text-align: center;
+  background-color: rgb(173, 223, 230);;
+}
+
+.modalClose:hover {
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 10px 20px;
+  color: black;
+}
+
+.sub_text div span{
+  background: linear-gradient(transparent 30%, #a8eaff 50%);
+}
+
+.btnBack{
+  margin:0 auto;
+}

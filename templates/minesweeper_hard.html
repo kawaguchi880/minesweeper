@@ -4,6 +4,8 @@
   <title>minesweeper</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static',filename='css/common.css')}}" />
   <script src="{{url_for('static',filename='js/common.js')}}"></script>
 </head>
@@ -44,18 +46,62 @@
               <div class="fs-4 fw-bold">マインスイーパ(hard)</div>
             </div>
             <!— コンテンツ -->
-              <div class="container-fluid pt-3 px-5">
-                <form action="/game_result" method="POST">
-                  <input type="hidden" value="hard" name="game_level"></input>
-                  <button value="win" name="game_result">難易度hardのwinボタン(dev用)</button>
-                </form>
-                <form action="/game_result" method="POST">
-                  <input type="hidden" value="hard" name="game_level"></input>
-                  <button value="lose" name="game_result">難易度hardのloseボタン(dev用)</button>
-                </form>
+              <div class=" container-fluid pt-3 px-5">
+                <input type="hidden" id="w" value="30">
+                <input type="hidden" id="h" value="14">
+                <input type="hidden" id="b" value="70">
+                <div class="sub_text">
+                  <div>残りの旗は<span class="bombCount">0</span>個</div>
+                  <div>経過時間<span id="time" class="timer">000</span>秒</div>
+                </div>
+                <div id="setting2">
+                  <div id="btn">
+                    START
+                  </div>
+                </div>
+                <table id="board">
+                </table>
+                <div id="text">
+                  ～操作方法～
+                  </h3>
+                  <p>左クリックでマスを開ける</p>
+                  <p>右クリックで<span class="flag"></span>マークを付ける</p>
+                </div>
+                <div id="loseModal" class="modal">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 id="result"></h3>
+                    </div>
+                    <div class="modal-body">
+                      <p>旗を有効に使おう！</p>
+                      <p>難易度を落として練習しよう</p>
+                      <form action=" /game_result" method="POST">
+                        <input type="hidden" value="hard" name="game_level"></input>
+                        <button value="lose" name="game_result">戻る</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div id="winModal" class="modal">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 id="result"></h3>
+                    </div>
+                    <div class="modal-body">
+                      <p>新しい難易度に挑戦しよう！！</p>
+                      <p>難易度を落として練習しよう</p>
+                      <form action=" /game_result" method="POST">
+                        <input type="hidden" value="hard" name="game_level"></input>
+                        <button value="win" name="game_result">戻る</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
               </div>
         </main>
   </div>
 </body>
 
 </html>
+<script src="{{url_for('static',filename='js/mine.js')}}"></script>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/mine.css')}}" />

@@ -89,38 +89,30 @@ def buttle_rerult():
       game_level = request.form['game_level']
       print(user_info)
       # 総試合数の更新
-      buttle_count = int(user_info['buttle_count']) 
-      buttle_count += 1
+      buttle_count = int(user_info['buttle_count']) +1
       user_info['buttle_count'] = buttle_count
       # # 難易度，ゲーム別の試合数の更新
       if game_level == 'hard':
-         mine_hard_count = int(user_info['mine_hard_count'])
-         mine_hard_count +=1
+         mine_hard_count = int(user_info['mine_hard_count']) +1
          user_info['mine_hard_count'] = mine_hard_count
       if game_level == 'nomal':
-         mine_nomal_count = int(user_info['mine_nomal_count'])
-         mine_nomal_count +=1
+         mine_nomal_count = int(user_info['mine_nomal_count']) + 1
          user_info['mine_nomal_count'] = mine_nomal_count
       if game_level == 'easy':
-         mine_easy_count = int(user_info['mine_easy_count'])
-         mine_easy_count +=1
+         mine_easy_count = int(user_info['mine_easy_count'])+1
          user_info['mine_easy_count'] = mine_easy_count
 
       if result == 'win':
-         win_count = int(user_info['win_count'])
-         win_count +=1
+         win_count = int(user_info['win_count'])+1
          user_info['win_count'] = win_count
          if game_level == 'hard':
-            mine_hard_win_count = int(user_info['mine_hard_win_count'])
-            mine_hard_win_count +=1
+            mine_hard_win_count = int(user_info['mine_hard_win_count'])+1
             user_info['mine_hard_win_count'] = mine_hard_win_count
          if game_level == 'nomal':
-            mine_nomal_win_count = int(user_info['mine_nomal_win_count'])
-            mine_nomal_win_count +=1
+            mine_nomal_win_count = int(user_info['mine_nomal_win_count'])+1
             user_info['mine_nomal_win_count'] = mine_nomal_win_count
          if game_level == 'easy':
-            mine_easy_win_count = int(user_info['mine_easy_win_count'])
-            mine_easy_win_count +=1
+            mine_easy_win_count = int(user_info['mine_easy_win_count'])+1
             user_info['mine_easy_win_count'] = mine_easy_win_count
 
    print(user_info)
@@ -132,13 +124,14 @@ def buttle_rerult():
 def statistics():
    user_info = request.cookies.get('user_info')
    user_info = json.loads(user_info)
-   print(user_info)
    buttle_count = int(user_info['buttle_count'])
-   print(user_info)
-   print(buttle_count)
+   win_count = int(user_info['win_count'])
    if buttle_count == 0:
       flash("戦績はまだありません!!",'errtext')
       return  redirect('/')
+   elif win_count == 0:
+      flash("1回以上クリアすると解放されます。",'errtext')
+      return redirect('/')
    else:
       return render_template('statistics.html',user_info=user_info)
    
