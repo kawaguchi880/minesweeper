@@ -52,7 +52,7 @@
               <div class=" container-fluid pt-3 px-5">
                 <input type="hidden" id="w" value="10">
                 <input type="hidden" id="h" value="10">
-                <input type="hidden" id="b" value="10">
+                <input type="hidden" id="b" value="5">
                 <div class="sub_text">
                   <div>残りの旗は<span class="bombCount">0</span>個</div>
                   <div>経過時間<span id="time" class="timer">000</span>秒</div>
@@ -80,7 +80,7 @@
                       <p>難易度を落として練習しよう</p>
                       <form action=" /game_result" method="POST">
                         <input type="hidden" value="easy" name="game_level"></input>
-                        <button value="lose" name="game_result">戻る</button>
+                        <button value="lose" name="game_result" class="btn btn-dark btn-sm bottom-up">戻る</button>
                       </form>
                     </div>
                   </div>
@@ -88,14 +88,13 @@
                 <div id="winModal" class="modal">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h3 id="result"></h3>
+                      <h3 id="result">CLEAR!!</h3>
                     </div>
                     <div class="modal-body">
                       <p>新しい難易度に挑戦しよう！！</p>
-                      <p>難易度を落として練習しよう</p>
                       <form action=" /game_result" method="POST">
                         <input type="hidden" value="easy" name="game_level"></input>
-                        <button value="win" name="game_result" class="justify-content-center">戻る</button>
+                        <button value="win" name="game_result" class="btn btn-dark btn-sm bottom-up">戻る</button>
                       </form>
                     </div>
                   </div>

@@ -1,5 +1,5 @@
 from datetime import datetime
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory,make_response,flash
+from flask import Flask, render_template, request, redirect,make_response,flash
 import json
 
 app = Flask(__name__)
@@ -130,7 +130,7 @@ def statistics():
       flash("戦績はまだありません!!",'errtext')
       return  redirect('/')
    elif win_count == 0:
-      flash("1回以上クリアすると解放されます。",'errtext')
+      flash("1回以上クリアすると利用できます。",'errtext')
       return redirect('/')
    else:
       return render_template('statistics.html',user_info=user_info)

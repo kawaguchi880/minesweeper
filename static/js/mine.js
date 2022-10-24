@@ -123,7 +123,6 @@ function leftClicked() {
       }
     }
     board.style.pointerEvents = "none";
-    result.textContent = "CLEAR!!";
     clearTimeout(timeoutId);
     return;
   }
