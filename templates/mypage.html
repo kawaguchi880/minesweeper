@@ -14,6 +14,15 @@
   <header class="w-100 d-flex justify-content-between align-items-center bg-light px-3">
     <!— ヘッダーの内容 -->
       <h1 class="mx-2 fs-4 text-primary fw-bold"><b>minesweeper!</b></h1>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      <div>
+        {% for category, message in messages %}
+        <b class="{{ category }}">{{ message }}</b>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% endwith %}
       <ul class="navbar-nav d-flex flex-row">
         <li class="nav-item mx-3 text-muted active headHover"><a href="{{url_for('mypage')}}"
             class="nav-link text-secondary">mypage</a></li>
@@ -77,15 +86,6 @@
                   </div>
                   <div class="row col-6">
                     <input class="btn btn-danger bottom-up" type="submit" value="登録・更新">
-                    {% with messages = get_flashed_messages(with_categories=true) %}
-                    {% if messages %}
-                    <div>
-                      {% for category, message in messages %}
-                      <b class="{{ category }}">{{ message }}</b>
-                      {% endfor %}
-                    </div>
-                    {% endif %}
-                    {% endwith %}
                   </div>
                 </form>
                 <div class="row col-6">
