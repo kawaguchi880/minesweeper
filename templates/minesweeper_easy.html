@@ -54,21 +54,23 @@
                 <input type="hidden" id="h" value="10">
                 <input type="hidden" id="b" value="10">
                 <div class="sub_text">
-                  <div>残りの旗は<span class="bombCount">0</span>個</div>
-                  <div>経過時間<span id="time" class="timer">000</span>秒</div>
+                  <div>残りの目印は<span class="bombCount">0</span>個</div>
+                  <div>残り時間<span id="time" class="timer">100</span>秒</div>
                 </div>
                 <div id="setting2">
-                  <div id="btn">
+                  <div id="btn" class="bottom-up">
                     START
                   </div>
                 </div>
                 <table id="board">
                 </table>
                 <div id="text">
-                  ～操作方法～
-                  </h3>
+                  <h4>～操作方法～</h4>
                   <p>左クリックでマスを開ける</p>
                   <p>右クリックで<span class="flag"></span>マークを付ける</p>
+                  <br />
+                  <h4>～クリア条件～</h4>
+                  <p>時間制限内に爆弾を除いて、<br>全てのマスを空けること</p>
                 </div>
                 <div id="loseModal" class="modal">
                   <div class="modal-content">

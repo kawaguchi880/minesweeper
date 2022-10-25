@@ -38,6 +38,7 @@
   line-height: 30px;
   font-size: 24px;
   font-family: "Material Icons Outlined";
+  content: "\e425";
 }
 
 /* game */
@@ -59,7 +60,7 @@ td {
 }
 .flag::before {
   font-family: "Material Icons";
-  content: "\e153";
+  content: "\e99a";
   animation: fadein 0.3s;
 }
 .bomb {
@@ -81,7 +82,7 @@ td {
 .bombCount::before {
   font-size: 24px;
   font-family: "Material Icons";
-  content: "\e153";
+  content: "\e99a";
 }
 @keyframes fadein {
   0% {

@@ -4,7 +4,7 @@ let data = [];
 let h, w, bomb, count;
 let startTime;
 let timeoutId;
-
+let TimeLeft;
 
 const btn = document.getElementById("btn");
 btn.addEventListener("click", init);
@@ -24,7 +24,7 @@ function init() {
     result.textContent = "エラー：爆弾の数が正しく入力されていません。";
     return;
   }
-  if (time.textContent !== "000") {
+  if (time.textContent !== "100") {
     result.textContent = "戻るボタンから一度戻ってください";
     return;
   }
@@ -36,7 +36,7 @@ function init() {
   result.textContent = "";
   count = bomb;
   bombCount.textContent = count;
-  time.textContent = "000";
+  time.textContent = "100";
   for (let i = 0; i < h; i++) {
     const tr = document.createElement("tr");
     for (let j = 0; j < w; j++) {
@@ -86,6 +86,7 @@ function leftClicked() {
       }
     }
     putBomb();
+
   }
 
   // 爆弾を踏んだか判定
@@ -198,12 +199,26 @@ function countOpenCell() {
   }
 }
 
-// ストップウォッチ
+
 function timer() {
-  const d = new Date(Date.now() - startTime);
-  const s = String(d.getSeconds()).padStart(3, "0");
-  time.textContent = `${s}`;
+  const deff = new Date(Date.now() - startTime);
+  const s = String(deff.getSeconds());
+  const m = Number(deff.getMinutes()) * 60;
+
+  // console.log(s);
+  TimeLeft = 100 - Number(s) - m;
+  // console.log(TimeLeft);
+  time.textContent = `${TimeLeft}`;
+
+  if (TimeLeft === 0) {
+    board.style.pointerEvents = "none";
+    result.textContent = "GAME OVER";
+    clearTimeout(timeoutId);
+    lose_modal.style.display = 'block';
+    return;
+  }
   timeoutId = setTimeout(() => {
     timer();
   }, 1000);
 }
+
