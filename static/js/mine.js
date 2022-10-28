@@ -18,11 +18,11 @@ const lose_modal = document.getElementById('loseModal');
 const win_modal = document.getElementById('winModal');
 
 // 発表用のコード
-// const TestWin = document.getElementById("TestWin");
-// TestWin.addEventListener("click", Win);
-// function Win() {
-//   win_modal.style.display = 'block';
-// }
+const TestWin = document.getElementById("TestWin");
+TestWin.addEventListener("click", Win);
+function Win() {
+  win_modal.style.display = 'block';
+}
 
 function init() {
   h = Number(document.getElementById("h").value);
